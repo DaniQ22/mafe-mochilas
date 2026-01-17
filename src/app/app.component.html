@@ -1,0 +1,284 @@
+<button (click)="openWhatsApp()"
+  class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300 flex items-center gap-2 group">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
+    ¡Contáctanos!
+  </span>
+</button>
+
+<!-- Header -->
+<header class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-500">
+        <path
+          d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+        </path>
+        <path d="M5 3v4"></path>
+        <path d="M19 17v4"></path>
+        <path d="M3 5h4"></path>
+        <path d="M17 19h4"></path>
+      </svg>
+      <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+        Mochilas Mafe
+      </h1>
+    </div>
+    <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+      <a href="#inicio" class="hover:text-pink-500 transition">Inicio</a>
+      <a href="#galeria" class="hover:text-pink-500 transition">Galería</a>
+      <a href="#nosotros" class="hover:text-pink-500 transition">Nosotros</a>
+    </nav>
+    <button (click)="openWhatsApp()"
+      class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <span class="hidden sm:inline">Consultar</span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section id="inicio" class="pt-20 pb-16 px-6 bg-gradient-to-b from-pink-50 via-purple-50 to-white">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6">
+      <div class="inline-block bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">
+        ✨ Diseños Únicos y Personalizados
+      </div>
+      <h2 class="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
+        Mochilas hechas
+        <span class="block bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+          con amor
+        </span>
+      </h2>
+      <p class="text-gray-600 text-lg">
+        Creamos mochilas únicas, elegantes y funcionales para acompañarte en cada momento de tu día. Cada pieza es hecha
+        con dedicación y los mejores materiales.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <button (click)="openWhatsApp()"
+          class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          Solicitar Información
+        </button>
+        <a href="#galeria"
+          class="border-2 border-pink-300 text-pink-600 px-8 py-4 rounded-full font-semibold hover:bg-pink-50 transition-all duration-300 text-center">
+          Ver Galería
+        </a>
+      </div>
+    </div>
+    <div class="relative">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-pink-300 to-purple-300 rounded-3xl blur-3xl opacity-30 animate-pulse">
+      </div>
+      <div class="relative bg-white rounded-3xl p-8 shadow-2xl">
+        <div class="w-full h-64 flex items-center justify-center overflow-hidden rounded-2xl">
+          <img src="assets/images/image-1.jpg" alt="Mochila destacada" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex justify-center gap-2 mt-6 mb-4">
+          <svg *ngFor="let star of [1,2,3,4,5]" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" class="text-yellow-400">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+            </polygon>
+          </svg>
+        </div>
+        <p class="text-center text-gray-600 font-medium">Clientes satisfechos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="py-16 px-6 bg-white/50">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+    <div *ngFor="let feature of features"
+      class="text-center p-6 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300">
+      <div class="text-6xl mb-4">{{ feature.emoji }}</div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">{{ feature.title }}</h3>
+      <p class="text-gray-600">{{ feature.desc }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="galeria" class="py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">
+        Galería de Creaciones
+      </h2>
+      <p class="text-gray-600 text-lg mb-6">
+        Explora nuestras hermosas mochilas hechas a mano
+      </p>
+      <p class="text-sm text-gray-500 flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+          <circle cx="12" cy="13" r="3"></circle>
+        </svg>
+        Las imágenes son ilustrativas. Sube fotos reales de tus mochilas para mostrar tu trabajo
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+      <div *ngFor="let item of galleryImages" (click)="selectImage(item)"
+        class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <img [src]="item.imageUrl" [alt]="item.name"
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <p class="text-white font-semibold">{{ item.name }}</p>
+        </div>
+        <button
+          class="absolute top-4 right-4 p-2 rounded-full bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-500">
+            <path
+              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <button (click)="openWhatsApp()"
+        class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Consultar por WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="nosotros" class="py-20 px-6 bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-6">
+      Sobre Nosotros
+    </h2>
+    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+      En Mochilas Mafe creamos mochilas con pasión y dedicación. Cada pieza es cuidadosamente elaborada
+      pensando en la mujer moderna que busca estilo, funcionalidad y calidad. Trabajamos con los mejores
+      materiales y ponemos amor en cada detalle para que tu mochila sea tan especial como tú.
+    </p>
+    <div class="flex justify-center gap-6 mb-8">
+      <div class="bg-white rounded-2xl p-6 shadow-lg">
+        <p class="text-4xl font-bold text-pink-500 mb-2">500+</p>
+        <p class="text-gray-600">Mochilas creadas</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-lg">
+        <p class="text-4xl font-bold text-purple-500 mb-2">100%</p>
+        <p class="text-gray-600">Hechas a mano</p>
+      </div>
+    </div>
+    <button (click)="openWhatsApp()"
+      class="bg-white text-pink-500 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      Chatea con nosotros
+    </button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400">
+            <path
+              d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+            </path>
+            <path d="M5 3v4"></path>
+            <path d="M19 17v4"></path>
+            <path d="M3 5h4"></path>
+            <path d="M17 19h4"></path>
+          </svg>
+          <h3 class="text-2xl font-bold">Mochilas Mafe</h3>
+        </div>
+        <p class="text-gray-400">
+          Diseñando mochilas con amor y dedicación para mujeres que buscan estilo único.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-4">Contacto</h4>
+        <button (click)="openWhatsApp()"
+          class="text-gray-400 hover:text-pink-400 transition flex items-center gap-2 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          WhatsApp
+        </button>
+        <a href="#" class="text-gray-400 hover:text-pink-400 transition flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+          Instagram
+        </a>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-4">Horario</h4>
+        <p class="text-gray-400">Lunes a Viernes</p>
+        <p class="text-gray-400">9:00 AM - 6:00 PM</p>
+        <p class="text-gray-400 mt-2">Sábados</p>
+        <p class="text-gray-400">10:00 AM - 2:00 PM</p>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-8 text-center">
+      <p class="text-gray-500 text-sm">
+        © 2025 Mochilas Mafe. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Image Modal -->
+<div *ngIf="selectedImage" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+  (click)="closeModal()">
+  <div class="relative max-w-2xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl"
+    (click)="$event.stopPropagation()">
+    <button (click)="closeModal()"
+      class="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition z-10">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+    <img [src]="selectedImage.imageUrl" [alt]="selectedImage.name" class="w-full h-96 object-cover" />
+    <div class="p-6">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">{{ selectedImage.name }}</h3>
+      <p class="text-gray-600 mb-6">
+        Hermosa mochila hecha a mano con materiales de alta calidad. Perfecta para tu día a día.
+      </p>
+      <button (click)="openWhatsApp()"
+        class="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Consultar disponibilidad
+      </button>
+    </div>
+  </div>
+</div>
