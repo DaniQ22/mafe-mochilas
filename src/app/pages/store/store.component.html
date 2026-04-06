@@ -1,0 +1,233 @@
+<button
+  (click)="openWhatsApp()"
+  class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300 flex items-center gap-2 group"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
+    Comprar por WhatsApp
+  </span>
+</button>
+
+<header class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-500">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+        <path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path>
+      </svg>
+      <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">Mochilas Mafe</h1>
+    </div>
+
+    <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+      <a href="#inicio" class="hover:text-pink-500 transition">Inicio</a>
+      <a href="#catalogo" class="hover:text-pink-500 transition">Catalogo</a>
+      <a href="#nosotros" class="hover:text-pink-500 transition">Nosotros</a>
+    </nav>
+
+    <button
+      (click)="openWhatsApp()"
+      class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 flex items-center gap-2"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <span class="hidden sm:inline">Consultar</span>
+    </button>
+  </div>
+</header>
+
+<section id="inicio" class="pt-20 pb-16 px-6 bg-gradient-to-b from-pink-50 via-purple-50 to-white">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6">
+      <div class="inline-block bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">Tienda online sin pagos en linea</div>
+      <h2 class="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
+        Mochilas tipo
+        <span class="block bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">ecommerce</span>
+      </h2>
+      <p class="text-gray-600 text-lg">
+        Explora el catalogo, mira detalles y finaliza tu compra por WhatsApp. Sin pasarela de pagos.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a href="#catalogo" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
+          Ver catalogo
+        </a>
+        <button (click)="openWhatsApp()" class="border-2 border-pink-300 text-pink-600 px-8 py-4 rounded-full font-semibold hover:bg-pink-50 transition-all duration-300 text-center">
+          Pedir por WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="absolute inset-0 bg-gradient-to-r from-pink-300 to-purple-300 rounded-3xl blur-3xl opacity-30 animate-pulse"></div>
+      <div class="relative bg-white rounded-3xl p-8 shadow-2xl">
+        <div class="w-full h-64 flex items-center justify-center overflow-hidden rounded-2xl bg-gray-100">
+          <img [src]="heroImageUrl" alt="Mochila destacada" class="w-full h-full object-cover" />
+        </div>
+        <p class="text-center text-gray-600 font-medium mt-6">Producto destacado</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 px-6 bg-white/50">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+    <div *ngFor="let feature of features" class="text-center p-6 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300">
+      <div class="text-sm tracking-widest font-bold text-pink-500 mb-3">{{ feature.icon }}</div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">{{ feature.title }}</h3>
+      <p class="text-gray-600">{{ feature.desc }}</p>
+    </div>
+  </div>
+</section>
+
+<section id="catalogo" class="py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Catalogo de mochilas</h2>
+      <p class="text-gray-600 text-lg">Todas las referencias disponibles para tus clientes.</p>
+    </div>
+
+    <div *ngIf="isLoadingBackpacks" class="text-center text-gray-500 py-12">Cargando mochilas...</div>
+    <div *ngIf="!isLoadingBackpacks && loadError" class="text-center text-red-600 py-12">{{ loadError }}</div>
+
+    <div *ngIf="!isLoadingBackpacks && !loadError && backpacks.length === 0" class="text-center text-gray-500 py-12">
+      Aun no hay mochilas publicadas.
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" *ngIf="backpacks.length > 0">
+      <article *ngFor="let backpack of backpacks; trackBy: trackByBackpackId" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <img [src]="backpack.imageUrls[0]" [alt]="backpack.name" class="w-full h-56 object-cover" />
+          <span *ngIf="backpack.imageUrls.length > 1" class="absolute bottom-2 right-2 bg-black/50 text-white text-xs rounded-full px-2 py-0.5">
+            1 / {{ backpack.imageUrls.length }}
+          </span>
+        </div>
+        <div class="p-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-800">{{ backpack.name }}</h3>
+          <p class="text-gray-600 min-h-[48px]">{{ backpack.description || 'Sin descripcion.' }}</p>
+          <p class="text-pink-600 font-semibold">{{ formatPrice(backpack.price) }}</p>
+          <div class="flex gap-3">
+            <button
+              type="button"
+              (click)="openDetail(backpack)"
+              class="w-1/2 border border-pink-300 text-pink-600 py-2 rounded-full hover:bg-pink-50 transition"
+            >
+              Ver detalle
+            </button>
+            <button
+              type="button"
+              (click)="openWhatsApp(backpack.name)"
+              class="w-1/2 bg-gradient-to-r from-pink-500 to-purple-500 text-white py-2 rounded-full hover:shadow-lg transition"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="py-20 px-6 bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-6">Sobre Nosotros</h2>
+    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+      En Mochilas Mafe creamos productos con pasion y dedicacion para clientes que buscan estilo y funcionalidad.
+    </p>
+    <button
+      (click)="openWhatsApp()"
+      class="bg-white text-pink-500 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      Chatea con nosotros
+    </button>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white py-12 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <p class="text-gray-400">Mochilas Mafe</p>
+    <p class="text-gray-500 text-sm mt-2">{{ currentYear }} Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- Modal detalle con carrusel -->
+<div
+  *ngIf="selectedBackpack"
+  class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+  (click)="closeModal()"
+>
+  <div
+    class="relative max-w-2xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl"
+    (click)="$event.stopPropagation()"
+  >
+    <!-- Cerrar -->
+    <button (click)="closeModal()" class="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition z-20 shadow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Carrusel -->
+    <div class="relative bg-gray-100 h-80 overflow-hidden">
+      <img
+        [src]="selectedBackpack.imageUrls[carouselIndex]"
+        [alt]="selectedBackpack.name"
+        class="w-full h-full object-cover"
+      />
+
+      <!-- Flechas (solo si hay mas de 1 imagen) -->
+      <ng-container *ngIf="selectedBackpack.imageUrls.length > 1">
+        <button
+          (click)="prevImage()"
+          class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow transition z-10"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"></path>
+          </svg>
+        </button>
+        <button
+          (click)="nextImage()"
+          class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow transition z-10"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </button>
+
+        <!-- Puntos indicadores -->
+        <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
+          <button
+            *ngFor="let img of selectedBackpack.imageUrls; let i = index"
+            (click)="goToImage(i)"
+            [class]="i === carouselIndex
+              ? 'w-2.5 h-2.5 rounded-full bg-white shadow'
+              : 'w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 transition'"
+          ></button>
+        </div>
+
+        <!-- Contador -->
+        <span class="absolute top-3 left-3 bg-black/50 text-white text-xs rounded-full px-2 py-0.5">
+          {{ carouselIndex + 1 }} / {{ selectedBackpack.imageUrls.length }}
+        </span>
+      </ng-container>
+    </div>
+
+    <!-- Info -->
+    <div class="p-6 space-y-4">
+      <h3 class="text-2xl font-bold text-gray-800">{{ selectedBackpack.name }}</h3>
+      <p class="text-gray-600">{{ selectedBackpack.description || 'Sin descripcion disponible.' }}</p>
+      <p class="text-pink-600 font-semibold text-lg">{{ formatPrice(selectedBackpack.price) }}</p>
+
+      <button
+        (click)="openWhatsApp(selectedBackpack.name)"
+        class="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+      >
+        Comprar por WhatsApp
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,27 +1,55 @@
-# MochilasMafe
+# Mochilas Mafe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Proyecto con:
 
-## Development server
+- Frontend en Angular 16 (`front`) separado en:
+  - tienda publica (`/`)
+  - panel admin (`/admin`)
+- Backend en NestJS (`../backend`) para guardar y listar mochilas con imagen.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Estructura
 
-## Code scaffolding
+- Frontend: esta carpeta (`front/`)
+- Backend: `../backend/`
+- Uploads backend: `../backend/uploads/`
+- Datos backend: `../backend/data/backpacks.json`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requisitos
 
-## Build
+- Node.js 18+
+- npm 9+
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Ejecutar frontend
 
-## Running unit tests
+Desde `front/`:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+npm start
+```
 
-## Running end-to-end tests
+Frontend en `http://localhost:4200`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Ejecutar backend (carpeta hermana `backend`)
 
-## Further help
+Desde `../backend/`:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install
+npm run start:dev
+```
+
+Backend en `http://localhost:3000`.
+
+## Endpoints backend
+
+- `GET /api/backpacks`: lista todas las mochilas.
+- `POST /api/backpacks`: crea mochila con `multipart/form-data`.
+  - Campos: `name` (requerido), `description` (opcional), `price` (opcional), `image` (requerido).
+- `GET /uploads/:filename`: sirve imagenes subidas.
+
+## Flujo funcional
+
+1. Admin entra a `http://localhost:4200/admin` y sube productos con imagen.
+2. Cliente entra a `http://localhost:4200/` y ve catalogo dinamico.
+3. Cliente consulta o compra por WhatsApp (sin pasarela de pagos).
