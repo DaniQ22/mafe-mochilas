@@ -56,7 +56,7 @@
       <div class="absolute inset-0 bg-gradient-to-r from-pink-300 to-purple-300 rounded-3xl blur-3xl opacity-30 animate-pulse"></div>
       <div class="relative bg-white rounded-3xl p-8 shadow-2xl">
         <div class="w-full h-64 flex items-center justify-center overflow-hidden rounded-2xl bg-gray-100">
-          <img [src]="heroImageUrl" alt="Mochila destacada" class="w-full h-full object-cover" />
+          <img [src]="heroImageUrl" alt="Mochila destacada" class="w-full h-full object-contain" />
         </div>
         <p class="text-center text-gray-600 font-medium mt-6">Producto destacado</p>
       </div>
@@ -91,7 +91,7 @@
     <div class="grid md:grid-cols-3 gap-8" *ngIf="backpacks.length > 0">
       <article *ngFor="let backpack of backpacks; trackBy: trackByBackpackId" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
         <div class="relative">
-          <img [src]="backpack.imageUrls[0]" [alt]="backpack.name" class="w-full h-56 object-cover" />
+          <img [src]="backpack.imageUrls[0]" [alt]="backpack.name" class="w-full h-56 object-contain bg-gray-50" />
           <span *ngIf="backpack.imageUrls.length > 1" class="absolute bottom-2 right-2 bg-black/50 text-white text-xs rounded-full px-2 py-0.5">
             1 / {{ backpack.imageUrls.length }}
           </span>
@@ -161,11 +161,11 @@
     </button>
 
     <!-- Carrusel -->
-    <div class="relative bg-gray-100 h-80 overflow-hidden">
+    <div class="relative bg-gray-100 h-96 overflow-hidden">
       <img
         [src]="selectedBackpack.imageUrls[carouselIndex]"
         [alt]="selectedBackpack.name"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-contain"
       />
 
       <ng-container *ngIf="selectedBackpack.imageUrls.length > 1">
