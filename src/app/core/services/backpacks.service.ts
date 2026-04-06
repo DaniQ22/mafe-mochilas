@@ -15,7 +15,7 @@ export interface CreateBackpackPayload {
   providedIn: 'root',
 })
 export class BackpacksService {
-  private readonly apiBaseUrl = 'http://localhost:3000';
+  private readonly apiBaseUrl = 'https://mochilasmafe-back.onrender.com';
   private readonly backpacksUrl = `${this.apiBaseUrl}/api/backpacks`;
 
   constructor(

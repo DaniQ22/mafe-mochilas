@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 
 const TOKEN_KEY = 'admin_token';
-const API_BASE = 'http://localhost:3000';
+const API_BASE = 'https://mochilasmafe-back.onrender.com';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient) { }
 
   login(username: string, password: string): Observable<{ token: string }> {
     return this.http
