@@ -48,6 +48,7 @@ export class StoreComponent implements OnInit {
   openDetail(backpack: Backpack): void {
     this.selectedBackpack = backpack;
     this.carouselIndex = 0;
+    backpack.imageUrls.forEach((url) => { new Image().src = url; });
   }
 
   closeModal(): void {
