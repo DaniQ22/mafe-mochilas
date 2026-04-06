@@ -2,9 +2,7 @@
   (click)="openWhatsApp()"
   class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300 flex items-center gap-2 group"
 >
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-  </svg>
+  <i class="fa-brands fa-whatsapp text-2xl"></i>
   <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap">
     Comprar por WhatsApp
   </span>
@@ -13,10 +11,7 @@
 <header class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <div class="flex items-center gap-2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-500">
-        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
-        <path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path>
-      </svg>
+      <i class="fa-solid fa-star text-pink-500 text-2xl"></i>
       <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">Mochilas Mafe</h1>
     </div>
 
@@ -30,9 +25,7 @@
       (click)="openWhatsApp()"
       class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 flex items-center gap-2"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-      </svg>
+      <i class="fa-solid fa-comment text-sm"></i>
       <span class="hidden sm:inline">Consultar</span>
     </button>
   </div>
@@ -139,9 +132,7 @@
       (click)="openWhatsApp()"
       class="bg-white text-pink-500 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-      </svg>
+      <i class="fa-brands fa-whatsapp text-lg"></i>
       Chatea con nosotros
     </button>
   </div>
@@ -165,10 +156,8 @@
     (click)="$event.stopPropagation()"
   >
     <!-- Cerrar -->
-    <button (click)="closeModal()" class="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition z-20 shadow">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
-      </svg>
+    <button (click)="closeModal()" class="absolute top-4 right-4 bg-white rounded-full w-9 h-9 flex items-center justify-center hover:bg-gray-100 transition z-20 shadow">
+      <i class="fa-solid fa-xmark text-gray-600"></i>
     </button>
 
     <!-- Carrusel -->
@@ -179,26 +168,20 @@
         class="w-full h-full object-cover"
       />
 
-      <!-- Flechas (solo si hay mas de 1 imagen) -->
       <ng-container *ngIf="selectedBackpack.imageUrls.length > 1">
         <button
           (click)="prevImage()"
           class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow transition z-10"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m15 18-6-6 6-6"></path>
-          </svg>
+          <i class="fa-solid fa-chevron-left text-gray-700"></i>
         </button>
         <button
           (click)="nextImage()"
           class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow transition z-10"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
+          <i class="fa-solid fa-chevron-right text-gray-700"></i>
         </button>
 
-        <!-- Puntos indicadores -->
         <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
           <button
             *ngFor="let img of selectedBackpack.imageUrls; let i = index"
@@ -209,7 +192,6 @@
           ></button>
         </div>
 
-        <!-- Contador -->
         <span class="absolute top-3 left-3 bg-black/50 text-white text-xs rounded-full px-2 py-0.5">
           {{ carouselIndex + 1 }} / {{ selectedBackpack.imageUrls.length }}
         </span>
@@ -224,8 +206,9 @@
 
       <button
         (click)="openWhatsApp(selectedBackpack.name)"
-        class="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+        class="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
       >
+        <i class="fa-brands fa-whatsapp text-lg"></i>
         Comprar por WhatsApp
       </button>
     </div>
