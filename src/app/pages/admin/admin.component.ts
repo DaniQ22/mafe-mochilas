@@ -24,6 +24,8 @@ export class AdminComponent implements OnInit {
   uploadMessage: string | null = null;
   uploadError: string | null = null;
 
+  deletingId: string | null = null;
+
   ngOnInit(): void {
     this.loadBackpacks();
   }
@@ -84,6 +86,21 @@ export class AdminComponent implements OnInit {
           this.uploadError = this.getUploadErrorMessage(error);
         },
       });
+  }
+
+  deleteBackpack(id: string): void {
+    if (this.deletingId) return;
+    this.deletingId = id;
+
+    this.backpacksService.deleteBackpack(id).subscribe({
+      next: () => {
+        this.backpacks = this.backpacks.filter((b) => b.id !== id);
+        this.deletingId = null;
+      },
+      error: () => {
+        this.deletingId = null;
+      },
+    });
   }
 
   formatPrice(price: number | null): string {

@@ -36,6 +36,12 @@ export class BackpacksService {
     );
   }
 
+  deleteBackpack(id: string): Observable<void> {
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders({ Authorization: `Bearer ${token ?? ''}` });
+    return this.http.delete<void>(`${this.backpacksUrl}/${id}`, { headers });
+  }
+
   createBackpack(payload: CreateBackpackPayload): Observable<Backpack> {
     const formData = new FormData();
     formData.append('name', payload.name);
